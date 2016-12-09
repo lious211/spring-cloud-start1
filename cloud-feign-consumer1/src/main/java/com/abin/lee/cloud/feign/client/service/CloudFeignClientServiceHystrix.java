@@ -1,6 +1,7 @@
 package com.abin.lee.cloud.feign.client.service;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -10,11 +11,11 @@ import org.springframework.web.bind.annotation.RequestParam;
  * spring-cloud-start1
  * com.abin.lee.cloud.feign.client.service
  */
-@FeignClient(value = "cloud-service-provider", fallback = CloudFeignClientServiceHystrix.class)
-public interface CloudFeignClientService {
+@Component
+public class CloudFeignClientServiceHystrix implements CloudFeignClientService{
 
-    @RequestMapping(method= RequestMethod.GET, value="/add")
-    Integer add(@RequestParam(value = "a") Integer a, @RequestParam(value = "b") Integer b);
-
-
+    @Override
+    public Integer add(@RequestParam(value = "a") Integer a, @RequestParam(value = "b") Integer b) {
+        return -99999;
+    }
 }
