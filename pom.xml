@@ -15,6 +15,7 @@
         <module>cloud-service-provider1</module>
         <module>cloud-service-provider2</module>
         <module>cloud-ribbon-consumer1</module>
+        <module>cloud-feign-consumer1</module>
     </modules>
 
 
