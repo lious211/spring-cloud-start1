@@ -1,5 +1,6 @@
 package com.abin.lee.cloud.ribbon.client.controller;
 
+import com.abin.lee.cloud.ribbon.client.service.CloudRibbonClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,11 +16,11 @@ import org.springframework.web.client.RestTemplate;
 public class CloudRibbonClientController {
 
     @Autowired
-    RestTemplate restTemplate;
+    CloudRibbonClientService cloudRibbonClientService;
 
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String add(){
-        return restTemplate.getForEntity("http://CLOUD-SERVICE-PROVIDER/add?a=10&b=20", String.class).getBody();
+        return cloudRibbonClientService.addService();
     }
 
 
