@@ -17,6 +17,8 @@
         <module>cloud-ribbon-consumer1</module>
         <module>cloud-feign-consumer1</module>
         <module>cloud-config-server1</module>
+        <module>cloud-config-client1</module>
+        <module>cloud-api-gateway1</module>
     </modules>
 
 

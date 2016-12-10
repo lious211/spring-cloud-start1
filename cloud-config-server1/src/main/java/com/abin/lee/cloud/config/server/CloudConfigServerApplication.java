@@ -13,6 +13,15 @@ import org.springframework.cloud.config.server.EnableConfigServer;
 @EnableConfigServer
 public class CloudConfigServerApplication {
 
+    /**
+     *  http://localhost:7001/spring-cloud/prod
+     *  http://localhost:7001/spring-cloud/prod/master
+     *
+     *
+     *
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         new SpringApplicationBuilder(CloudConfigServerApplication.class).web(true).run(args);
     }
