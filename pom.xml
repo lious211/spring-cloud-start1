@@ -19,6 +19,7 @@
         <module>cloud-config-server1</module>
         <module>cloud-config-client1</module>
         <module>cloud-api-gateway1</module>
+        <module>cloud-mybatis-server1</module>
     </modules>
 
 

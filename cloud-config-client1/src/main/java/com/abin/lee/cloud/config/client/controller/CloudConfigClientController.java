@@ -14,8 +14,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CloudConfigClientController {
 
+    /**
+     * Direct Read The Remote Repository
+     *
+     */
     @Value("${mysqldb.datasource.url}")
     String mysqlSource;
+    /**
+     * Step One : Read The Remote Repository spring-cloud-dev.properties 's mysqldb.datasource.url To This Module 's application.properties(mysql.config.url=${mysqldb.datasource.url})
+     * Step Two : Read This Module 's application.properties(mysql.config.url=${mysqldb.datasource.url}) To Here
+     */
+    @Value("${mysql.config.url}")
+    String mysqlUrl;
 
     /**
      * http://localhost:7002/source
@@ -28,6 +38,16 @@ public class CloudConfigClientController {
     @RequestMapping("/source")
     public String getResource(){
         return mysqlSource;
+    }
+
+    /**
+     * http://localhost:7002/mysqlsUrl
+     * 
+     * @return
+     */
+    @RequestMapping("/mysqlsUrl")
+    public String getMysqlsUrl(){
+        return mysqlUrl;
     }
 
     public String getMysqlSource() {
